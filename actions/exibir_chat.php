@@ -7,7 +7,16 @@
 	$query->execute();
 
 	while($row = $query->fetch(PDO::FETCH_OBJ)){
-		echo "<div class='col s12'>";
-		echo "<b>$row->tx_login: </b><span>$row->tx_chat</span>";
-		echo "</div>";
+
+		if($row->cd_login == $_SESSION['cd_login']){
+			echo "<div class='chat_box col s12 right-align'>";
+			echo "<span>$row->tx_chat</span>";
+			echo "</div>";
+		}else{
+			echo "<div class='chat_box col s12 left-align'>";
+			echo "<span><b>$row->tx_login: </b><br>$row->tx_chat</span>";
+			echo "</div>";
+			//Css speech bubble generator
+		}
+		
 	}
