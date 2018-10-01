@@ -23,6 +23,7 @@ body{
 }
 .chat_box span{
     background-color: #213F5B !important;
+    max-width: 80%;
     display: inline-block;
     padding:10px;
     margin:2px;

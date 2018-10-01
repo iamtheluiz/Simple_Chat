@@ -16,23 +16,34 @@
 				include_once('components/menu.php');
 			?>
 
-			<!-- Lista de Chats -->
-			<br>
-			<section class="corpo col s12 m8 l6 offset-m2 offset-l3">
-				
-				<a href="chat_global.php">
-					<div class="chat col s12 white">
-						<div class="col s3">
-							<i class="material-icons medium">web</i>
-						</div>
-						<div class="col s9">
-							<h5>Chat Global</h5>
-						</div>
-					</div>
-				</a>
+			<!-- Caixa de mensagem -->
+			<section class="corpo col s12">
+				<br><br>
+				<div id="chat" class="col s12 m10 l6 offset-m1 offset-l3 grey" style="padding:10px;">
+					<!-- Mensagens -->
+				</div>
 
 			</section>
-			<!-- Fim da Lista de Chats -->
+			<!-- Fim do Caixa de mensagem -->
+
+			<!-- Envio de Mensagem -->
+			<section class="corpo col s12">
+				<div class="col s12 m10 l6 offset-m1 offset-l3 black">
+					<form action="" method="post" id="form_chat" autocomplete="off">
+						<div class="input-field col s10">
+							<i class="material-icons prefix">chat</i>
+							<input type="text" id="tx_chat" name="tx_chat" value="">
+						</div>
+						<input type="reset" style="display:none;">
+						<div class="input-field col s2 center-align">
+							<button type="submit" class="btn-floating green darken-4"><i class="material-icons">send</i></button>
+						</div>
+					</form>
+				</div>
+
+			</section>
+			<!-- Fim do Envio de Mensagem -->
+
 
 		</div>
 		<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
