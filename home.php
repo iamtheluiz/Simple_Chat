@@ -12,6 +12,10 @@
 	<body>
 		<div class="content row">
 
+			<?php 
+				include_once('components/menu.php');
+			?>
+
 			<!-- Caixa de mensagem -->
 			<section class="corpo col s12">
 				<br><br>
@@ -45,6 +49,11 @@
 		<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript">
+
+        	$(document).ready(function(){
+        		$('.sidenav').sidenav();
+        	});
+
         	$(function(){
 				$('#form_chat').submit(function(event){
 					event.preventDefault();

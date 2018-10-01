@@ -8,6 +8,9 @@ body{
     height: 56px;
     width: auto;
 }
+#top_menu a{
+    color:white !important;
+}
 @media only screen and (min-width: 601px) {
     #top_menu a img{
         height: 64px;
