@@ -32,6 +32,9 @@ body{
 .chat_box span b{
     font-size: 8pt;
 }
+.chat_box i{
+    font-size: 8pt;
+}
 
 *:focus{
     outline: none;
