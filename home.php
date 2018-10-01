@@ -31,64 +31,34 @@
 					</div>
 				</a>
 
+				<!-- Mostrar todos os usuário do site -->
+				<?php
+
+					$sql = "SELECT * from tb_login where cd_login != ".$_SESSION['cd_login'];
+					$query = $pdo->prepare($sql);
+					$query->execute();
+
+					while($row = $query->fetch(PDO::FETCH_OBJ)){
+						echo '<a href="chat_privado.php?type=cadastro&login2='.$row->cd_login.'">
+							<div class="chat col s12 white">
+								<div class="col s3">
+									<i class="material-icons medium">account_circle</i>
+								</div>
+								<div class="col s9">
+									<h5>'.$row->tx_login.'</h5>
+								</div>
+							</div>
+						</a>';
+					}
+
+				?>
+
 			</section>
 			<!-- Fim da Lista de Chats -->
 
 		</div>
 		<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript">
-
-        	$(document).ready(function(){
-        		$('.sidenav').sidenav();
-        	});
-
-        	$(function(){
-				$('#form_chat').submit(function(event){
-					event.preventDefault();
-					var formDados = new FormData($(this)[0]);
-
-					$.ajax({
-						url:'actions/envia_msg.php',
-						type:'POST',
-						data:formDados,
-						cache:false,
-						contentType:false,
-						processData:false,
-						success:function (data)
-			     		{
-							$("#form_chat").trigger("reset");
-				  		},
-						dataType:'html'
-					});
-					return false;
-				});
-				atualizar_chat();
-			});
-
-			function atualizar_chat() {
-					
-				jQuery.ajax({
-					url: "actions/exibir_chat.php",
-					dataType: "html",
-					 
-					success: function(response){
-						jQuery("#chat").html(response);
-						var div = $('#chat');
-						div.prop("scrollTop", div.prop("scrollHeight"));
-					},
-					// quando houver erro
-					error: function(){
-						//alert("Ocorreu um erro durante a requisição");
-					}
-				});
-
-			}
-			atualizar_chat();
-
-			//Atualiza o chat periodicamente
-			setInterval(atualizar_chat,500);
-        </script>
 	</body>
 </html>
 <style type="text/css">

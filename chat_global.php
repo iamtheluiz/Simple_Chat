@@ -6,6 +6,7 @@
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+		<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
 		<meta charset="UTF-8">
 		<title>Login | Chat</title>
 	</head>
@@ -32,7 +33,10 @@
 					<form action="" method="post" id="form_chat" autocomplete="off">
 						<div class="input-field col s10">
 							<i class="material-icons prefix">chat</i>
-							<input type="text" id="tx_chat" name="tx_chat" value="">
+							<textarea type="text" id="tx_chat" name="tx_chat" class="materialize-textarea"></textarea>
+							<?php 
+								include_once('components/emojis.php');
+							?>
 						</div>
 						<input type="reset" style="display:none;">
 						<div class="input-field col s2 center-align">
@@ -46,7 +50,6 @@
 
 
 		</div>
-		<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript">
 
@@ -69,6 +72,7 @@
 						success:function (data)
 			     		{
 							$("#form_chat").trigger("reset");
+							$("#tx_chat").html('');
 				  		},
 						dataType:'html'
 					});
@@ -95,6 +99,17 @@
 				});
 
 			}
+
+			//Função que da submit no form quando se aperta a tecla enter
+			document.getElementById('tx_chat').onkeypress = function(evt) {
+				evt = evt || window.event;
+				var key = evt.keyCode || evt.which;
+				
+				if(key == 13){
+					$('#form_chat').submit();
+				}
+			};
+
 			atualizar_chat();
 
 			//Atualiza o chat periodicamente
@@ -102,52 +117,3 @@
         </script>
 	</body>
 </html>
-<style type="text/css">
-
-#chat{
-	max-height: 70vh;
-	overflow-y: auto;
-}
-
-a{
-	color:black !important;
-}
-
-	/* label color */
-.input-field label {
- color: white;
-}
-/* label focus color */
-.input-field input:focus + label {
- color: white !important;
-}
-
-.input-field input{
- border-bottom: 1px solid white !important;
- box-shadow: 0 1px 0 0 white !important;
- color:white;
-}
-/* label underline focus color */
-.input-field input:focus {
- border-bottom: 1px solid white !important;
- box-shadow: 0 1px 0 0 white !important;
- color:white;
-}
-/* valid color */
-.input-field input.valid {
- border-bottom: 1px solid #000 !important;
- box-shadow: 0 1px 0 0 #000 !important;
-}
-/* invalid color */
-.input-field input.invalid {
- border-bottom: 1px solid #000 !important;
- box-shadow: 0 1px 0 0 #000 !important;
-}
-/* icon prefix focus color */
-.input-field .prefix {
- color: white !important;
-}
-.input-field .prefix.active {
- color: white !important;
-}
-</style>

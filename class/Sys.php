@@ -15,7 +15,7 @@ class Sys{
 
 	private function db_connect(){
 		try{
-			$pdo = new PDO('mysql:host=localhost;dbname=db_chat;port=3307;charset=utf8','root','usbw');
+			$pdo = new PDO('mysql:host=localhost;dbname=db_chat;port=3307;charset=utf8mb4','root','usbw');
 			
 			return $pdo;
 		}catch (PDOException $e){
