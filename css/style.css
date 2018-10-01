@@ -18,13 +18,28 @@ body{
     }
 }
 
+#chat{
+    border:4px solid black;
+}
+.chat_box span{
+    background-color: #213F5B !important;
+    display: inline-block;
+    padding:10px;
+    margin:2px;
+    border-radius: 20px;
+    color:white;
+}
+.chat_box span b{
+    font-size: 8pt;
+}
+
 *:focus{
     outline: none;
     user-select: none;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #213F5B;
+    background-color: black;
 }
 ::-webkit-scrollbar {
     width: 6px;

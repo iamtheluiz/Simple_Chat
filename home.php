@@ -19,7 +19,7 @@
 			<!-- Caixa de mensagem -->
 			<section class="corpo col s12">
 				<br><br>
-				<div id="chat" class="col s12 m8 l6 offset-m2 offset-l3 grey" style="padding:10px;">
+				<div id="chat" class="col s12 m10 l6 offset-m1 offset-l3 grey" style="padding:10px;">
 					<!-- Mensagens -->
 				</div>
 
@@ -28,7 +28,7 @@
 
 			<!-- Envio de Mensagem -->
 			<section class="corpo col s12">
-				<div class="col s12 m8 l6 offset-m2 offset-l3 black">
+				<div class="col s12 m10 l6 offset-m1 offset-l3 black">
 					<form action="" method="post" id="form_chat" autocomplete="off">
 						<div class="input-field col s10">
 							<i class="material-icons prefix">chat</i>
@@ -90,7 +90,7 @@
 					},
 					// quando houver erro
 					error: function(){
-						alert("Ocorreu um erro durante a requisição");
+						//alert("Ocorreu um erro durante a requisição");
 					}
 				});
 
