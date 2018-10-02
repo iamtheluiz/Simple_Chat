@@ -4,6 +4,7 @@
 		<link href="css/material_icons.css" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
+        <link rel="manifest" href="manifest.json">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 		<meta charset="UTF-8">
 		<title>Cadastrar | Chat</title>
@@ -46,6 +47,11 @@
 		</div>
 		<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript">
+        	$(document).ready(function(){
+        		$('.sidenav').sidenav();
+        	});
+        </script>
 	</body>
 </html>
 <style type="text/css">

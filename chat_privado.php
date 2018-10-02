@@ -39,7 +39,7 @@
 				$query_i = $pdo->prepare($sql_i);
 				$query_i->execute();
 
-				echo $sql_i;
+				//echo $sql_i;
 
 				if($query_i->rowCount() > 0){
 
@@ -49,18 +49,18 @@
 					$query->execute();
 
 					if($query->rowCount() > 0){
-						$row = $query->fetch(PDO::FETCH_OBJ);
+						$row_t = $query->fetch(PDO::FETCH_OBJ);
 					}
 
-					$sql_v = "SELECT * from tb_privado where id_login2 = $cd_login2 and id_login1 = ".$_SESSION['cd_login'];
+					$sql_v = "SELECT * from tb_privado where id_login1 = $cd_login2 and id_login2 = ".$_SESSION['cd_login'];
 					$query_v = $pdo->prepare($sql_v);
 					$query_v->execute();
 
 					if($query_v->rowCount() > 0){
-						$row = $query_v->fetch(PDO::FETCH_OBJ);
+						$row_t = $query_v->fetch(PDO::FETCH_OBJ);
 					}
 
-					header('location: chat_privado.php?cd='.$row->cd_privado);
+					header('location: chat_privado.php?cd='.$row_t->cd_privado);
 
 				}
 
@@ -106,6 +106,7 @@
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+        <link rel="manifest" href="manifest.json">
 		<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
 		<meta charset="UTF-8">
 		<title>Login | Chat</title>

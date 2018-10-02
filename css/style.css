@@ -65,7 +65,7 @@ a{
 
     /* label color */
 .input-field label {
- color: white;
+ color: black;
 }
 /* label focus color */
 .input-field input:focus + label, .input-field textarea:focus + label  {
@@ -95,7 +95,7 @@ a{
 }
 /* icon prefix focus color */
 .input-field .prefix {
- color: white !important;
+ color: black !important;
 }
 .input-field .prefix.active {
  color: white !important;
