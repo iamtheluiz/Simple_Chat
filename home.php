@@ -20,39 +20,36 @@
 			<!-- Lista de Chats -->
 			<br>
 			<section class="corpo col s12 m8 l6 offset-m2 offset-l3">
-				
-				<a href="chat_global.php">
-					<div class="chat col s12 white">
-						<div class="col s3">
+
+				<ul class="collection">
+
+					<a href="chat_global.php">
+						<li class="collection-item avatar">
 							<i class="material-icons medium">web</i>
-						</div>
-						<div class="col s9">
-							<h5>Chat Global</h5>
-						</div>
-					</div>
-				</a>
+							<span class="title" style="font-size:25pt;">Chat Global</span>
+							<a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
+						</li>
+					</a>
 
-				<!-- Mostrar todos os usuário do site -->
-				<?php
+					<!-- Mostrar todos os usuário do site -->
+					<?php
 
-					$sql = "SELECT * from tb_login where cd_login != ".$_SESSION['cd_login'];
-					$query = $pdo->prepare($sql);
-					$query->execute();
+						$sql = "SELECT * from tb_login where cd_login != ".$_SESSION['cd_login'];
+						$query = $pdo->prepare($sql);
+						$query->execute();
 
-					while($row = $query->fetch(PDO::FETCH_OBJ)){
-						echo '<a href="chat_privado.php?type=cadastro&login2='.$row->cd_login.'">
-							<div class="chat col s12 white">
-								<div class="col s3">
-									<i class="material-icons medium">account_circle</i>
-								</div>
-								<div class="col s9">
-									<h5>'.$row->tx_login.'</h5>
-								</div>
-							</div>
-						</a>';
-					}
+						while($row = $query->fetch(PDO::FETCH_OBJ)){
+							echo '<a href="chat_privado.php?type=cadastro&login2='.$row->cd_login.'">';
+							echo '<li class="collection-item avatar">';
+							echo '<i class="material-icons medium">account_circle</i>';
+							echo '<span class="title" style="font-size:25pt;">'.$row->tx_login.'</span>';
+							echo '<a href="#!" class="secondary-content"><i class="material-icons">send</i></a>';
+							echo '</li>';
+							echo '</a>';
+						}
 
-				?>
+					?>
+				</ul>
 
 			</section>
 			<!-- Fim da Lista de Chats -->

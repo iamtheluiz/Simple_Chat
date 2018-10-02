@@ -15,18 +15,22 @@
 		$data = $data[0];				//Data da mensagem
 
 		if($row->cd_login == $_SESSION['cd_login']){
-			echo "<div class='chat_box col s12 right-align'>";
-				echo "<span>$row->tx_chat<br>";
-					echo "<i>$hora</i>";
-				echo "</span>";
+			echo "<div class='col s12 right-align'>";
+				echo "<div class='chat_box_r'>";
+					echo "<span>$row->tx_chat<br>";
+						echo "<i>$hora</i>";
+					echo "</span>";
+				echo "</div>";
 			echo "</div>";
 		}else{
-			echo "<div class='chat_box col s12 left-align'>";
-				echo "<span>";
-					echo "<b>$row->tx_login: </b><br>";
-					echo "$row->tx_chat<br>";
-					echo "<i>$hora</i>";
-				echo "</span>";
+			echo "<div class='col s12 left-align'>";
+				echo "<div class='chat_box_l'>";
+					echo "<span>";
+						echo "<b>$row->tx_login: </b><br>";
+						echo "$row->tx_chat<br>";
+						echo "<i>$hora</i>";
+					echo "</span>";
+				echo "</div>";
 			echo "</div>";
 			//Css speech bubble generator
 		}
